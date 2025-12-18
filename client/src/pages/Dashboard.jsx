@@ -20,7 +20,7 @@ const Dashboard = () => {
           return;
         }
 
-        const res = await axios.get("http://localhost:5001/incidents", {
+        const res = await axios.get("https://incident-api-9ps8.onrender.com", {
           headers: { token: token },
         });
         setIncidents(res.data);
@@ -36,7 +36,7 @@ const Dashboard = () => {
   // Real-time Listener
   useEffect(() => {
     // Connect to backend
-    const socket = io("http://localhost:5001");
+    const socket = io("https://incident-api-9ps8.onrender.com");
 
     // Listen for "new_incident" event
     socket.on("new_incident", (incident) => {
@@ -55,7 +55,7 @@ const Dashboard = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.post("http://localhost:5001/incidents", newIncident, {
+      const res = await axios.post("https://incident-api-9ps8.onrender.com", newIncident, {
         headers: { token: token },
       });
       

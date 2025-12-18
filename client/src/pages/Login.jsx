@@ -22,7 +22,7 @@ const Login = () => {
     try {
       // 1. Send data to backend
       const response = await axios.post(
-        `http://localhost:5001/auth${endpoint}`,
+        `https://incident-api-9ps8.onrender.com/auth${endpoint}`,
         formData
       );
       
