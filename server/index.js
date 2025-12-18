@@ -12,7 +12,7 @@ const server = http.createServer(app); // Create HTTP server manually
 // Setup Socket.io
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173", // Allow your frontend to connect
+    origin: "*", // Allow your frontend to connect
     methods: ["GET", "POST"],
   },
 });
